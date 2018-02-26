@@ -1,0 +1,25 @@
+{
+  "name": "hapi-tutorial",
+  "version": "1.0.0",
+  "description": "a test for hapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cheerio": "^0.22.7",
+    "@types/request-promise": "^4.1.41",
+    "cheerio": "^1.0.0-rc.2",
+    "good": "^8.1.0",
+    "good-console": "^7.1.0",
+    "good-squeeze": "^5.0.2",
+    "hapi": "^17.2.0",
+    "mongoose": "^5.0.7",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "tough-cookie": "^2.3.3",
+    "uuid": "^3.2.1"
+  }
+}
