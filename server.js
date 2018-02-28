@@ -64,7 +64,7 @@ server.register({
 (async () => {
     try {
         console.log('starting server');
-        await server.start();
+        await server.start({port: 3000});
         await mongoose.connect(MongoDBUrl, {}).then(() => { console.log(`Connected to Mongo server`) }, err => { console.log(err) });
         console.log('finished server start');
     } catch (e) {
