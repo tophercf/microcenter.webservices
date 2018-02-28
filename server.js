@@ -8,8 +8,7 @@ const ScrapeController = require('./controllers/microcenter/scrape');
 const MongoDBUrl = 'mongodb://localhost:27017/productapi';
 
 const server = new Hapi.Server({
-    port: 3000,
-    host: 'localhost'
+    port: 3000
 });
 
 
@@ -64,7 +63,7 @@ server.register({
 (async () => {
     try {
         console.log('starting server');
-        await server.start({port: 3000});
+        await server.start();
         await mongoose.connect(MongoDBUrl, {}).then(() => { console.log(`Connected to Mongo server`) }, err => { console.log(err) });
         console.log('finished server start');
     } catch (e) {
