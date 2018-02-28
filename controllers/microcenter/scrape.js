@@ -88,7 +88,9 @@ exports.scrape = (req, h) => {
           'sku': sku,
           'stock': stock,
           'inStoreOnly': inStoreOnly,
-          'runGroup': runGroup
+          'runGroup': runGroup,
+          'storeId': req.payload.storeId,
+          'pageNumber': req.payload.page
         });
       });
 

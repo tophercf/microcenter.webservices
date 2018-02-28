@@ -13,6 +13,8 @@ const productModel = new Schema({
   stock: {type: String},
   inStoreOnly: {type: Boolean},
   runGroup: {type: String},
+  storeId: {type: String},
+  pageNumber: {type: String},
   date: {type: Date, default: Date.now}
 });
 
