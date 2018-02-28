@@ -41,7 +41,7 @@ server.route({
 // pass in the store id to scrape
 server.route({
     method: 'POST',
-    path: '/test',
+    path: '/scrape',
     handler: ScrapeController.scrape
 });
 
@@ -51,6 +51,7 @@ server.route({
     path: '/category/count',
     handler: ScrapeController.getPageCountForCategory
 });
+
 /*
 server.register({
     plugin: require('good-squeeze'),
@@ -59,7 +60,6 @@ server.register({
     
 });
 */
-
 
 (async () => {
     try {

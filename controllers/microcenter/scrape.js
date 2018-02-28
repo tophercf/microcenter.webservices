@@ -46,7 +46,7 @@ exports.getPageCountForCategory = (req, h) => {
 
 exports.scrape = (req, h) => {
   var options = {
-    uri: 'http://www.microcenter.com/search/search_results.aspx?N=4294966937&NTK=all&page=2',
+    uri: 'http://www.microcenter.com/search/search_results.aspx?N='+req.payload.categoryId+'&NTK=all&page='+req.payload.page,
     jar: returnCookieJarSettings(req, rp),
     transform: function (body) {
       return cheerio.load(body);
@@ -77,7 +77,7 @@ exports.scrape = (req, h) => {
         if (rightFrame.find('.instore').find('.limitNoSale').length > 0) {
           inStoreOnly = true;
         }
-        let runGroup = guid;
+        let runGroup = req.payload.guid || guid;
 
         productList.push({
           'name': name,
