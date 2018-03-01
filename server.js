@@ -25,6 +25,12 @@ server.route({
 });
 
 server.route({
+    method: 'get',
+    path: '/count',
+    handler: ProductController.count
+})
+
+server.route({
     method: 'POST',
     path: '/product',
     handler: ProductController.create

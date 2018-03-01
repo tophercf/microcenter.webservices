@@ -54,6 +54,13 @@ exports.getByName = (req, h) => {
   });
 }
 
+exports.count = (req, h) => {
+  return Product.find({}).count().then((result) =>{
+    return { count: result}
+  }).catch((err) =>{
+    return {err: err};
+  });
+}
 /**
  * Add a new product
  */
