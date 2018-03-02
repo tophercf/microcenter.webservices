@@ -4,8 +4,11 @@ var Product =  require('../../models/microcenter/product');
  * List all products
  */
 exports.list = (req, h) => {
-  return Product.find({}).exec().then((product) => {
-    return { products: product };
+  return Product.find({}).sort({
+    "name": 1,
+    "date": -1
+  }).exec().then((products) => {
+    return { products: products };
   }).catch((err) => {
     return { err: err };
   });
